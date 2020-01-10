@@ -47,14 +47,14 @@ const newFindIndex = function (array, callBack){
 }
 
 const newEvery = function(array, callBack){
-    
+    let step = 0
     for (i = 0; i < array.length; i++){
         const currentValue = array[i];
-        if(callBack(currentValue) != currentValue){
-            return false;
+        if(callBack(currentValue) === true){
+            step++;
         }
 
-    }return true;
+    }return (step === array.length) ? true : false;
 }
 
 const newFilter = function(array, callBack){
